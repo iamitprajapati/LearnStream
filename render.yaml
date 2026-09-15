@@ -36,10 +36,9 @@ services:
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: ./frontend/dist
     plan: free
-    region: oregon
     envVars:
-      - key: VITE_API_URL
-        fromService:
-          type: web
-          name: learnstream-backend
-          property: url
+    - key: VITE_API_URL
+      fromService:
+        type: web
+        name: learnstream-backend
+        property: host
